@@ -1,0 +1,16 @@
+{
+  "name": "fpts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./dist/**/*.js"
+  },
+  "dependencies": {
+    "fp-ts": "^2.13.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
