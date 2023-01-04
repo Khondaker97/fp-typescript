@@ -1,12 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/node': ^18.11.18
   fp-ts: ^2.13.1
 
 dependencies:
   fp-ts: 2.13.1
 
+devDependencies:
+  '@types/node': 18.11.18
+
 packages:
+
+  /@types/node/18.11.18:
+    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
+    dev: true
 
   /fp-ts/2.13.1:
     resolution: {integrity: sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ==}

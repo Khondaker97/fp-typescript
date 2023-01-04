@@ -1,4 +1,4 @@
-import { Either, left, right } from "fp-ts/Either";
+import { Either, Left, left, right } from "fp-ts/Either";
 interface Kid {
   name: string;
   age: number;
@@ -15,17 +15,17 @@ const Kid_Bing: Kid = {
 const ifGetGift = (isWellBehaved: boolean) => {
   return isWellBehaved;
 };
-const getGiftNumber = (age: number): Either<Error, number> => {
+const getGiftNumber = (age: number): Either<string, number> => {
   if (age > 0 && age < 13) {
-    return Math.round(12 / age);
+    return right(Math.round(12 / age));
   } else {
-    return left(new Error("Age is invalid"));
+    return left("Age is invalid");
   }
 };
 
 const decideGifts = (numberOfGifts: number, wishList: string[]) => {
   if (wishList.includes("diamond")) {
-    return left(new Error("Shouldn't ask for diamond. "));
+    return left(new Error("Shouldn't ask for diamond."));
   } else {
     return right(
       numberOfGifts < wishList.length
@@ -38,11 +38,14 @@ const decideGifts = (numberOfGifts: number, wishList: string[]) => {
   }
 };
 
+const isLeft = <E, A>(x: Either<E, A>): x is Left<E> => x._tag === "Left";
+
 const getGifts = (kid: Kid) => {
   if (ifGetGift(kid.isWellBehaved)) {
     if (kid.age < 13 && kid.age > 0) {
-      const giftNumber = getGiftNumber(kid.age);
-      return decideGifts(giftNumber, kid.wishList);
+      const x = getGiftNumber(kid.age);
+      const giftNumber = isLeft(x) ? x : x.right;
+      return decideGifts(giftNumber as number, kid.wishList);
     } else {
       throw Error("Age not valid. No gifts.");
     }
@@ -50,3 +53,5 @@ const getGifts = (kid: Kid) => {
     throw Error("Not well-behaved. No gifts.");
   }
 };
+
+console.log(getGifts(Kid_Bing));

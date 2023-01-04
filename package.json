@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./dist/**/*.js"
+    "dev": "tsc && node ./dist/**/*.js"
   },
   "dependencies": {
     "fp-ts": "^2.13.1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
 }
