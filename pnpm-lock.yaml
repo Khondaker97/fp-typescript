@@ -3,9 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': ^18.11.18
   fp-ts: ^2.13.1
+  ts-pattern: ^4.1.2
 
 dependencies:
   fp-ts: 2.13.1
+  ts-pattern: 4.1.2
 
 devDependencies:
   '@types/node': 18.11.18
@@ -18,4 +20,8 @@ packages:
 
   /fp-ts/2.13.1:
     resolution: {integrity: sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ==}
+    dev: false
+
+  /ts-pattern/4.1.2:
+    resolution: {integrity: sha512-R/NEQHgeQwiyQyD5++s8rVB6jC1c6KiHHac2GEm0Pf82p3dth7s/kZfSimcUkVLjz+bPJn12721Vw9sbMpY5Rw==}
     dev: false
